@@ -219,9 +219,11 @@ func (p *putter) putPart(part *part) error {
 		return fmt.Errorf("Got Bad etag:%s", s)
 	}
 	s = s[1 : len(s)-1] // includes quote chars for some reason
+	/*
 	if part.ETag != s {
 		return fmt.Errorf("Response etag does not match. Remote:%s Calculated:%s", s, p.ETag)
 	}
+	*/
 	return nil
 }
 
